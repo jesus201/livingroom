@@ -1,3 +1,16 @@
+
+<?php
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/myfirstwebsite/core/init.php';
+
+  if(isset($_SESSION['loggedin'])){
+    header("location:home.php");
+  }
+
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,7 +37,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/custom.css">
 
 </head>
-<body>
+<body">
     <nav class="navbar navbar-expand-sm navbar-dark bg-success">
         <!-- Brand/logo -->
         <a class="navbar-brand" href="#">Logo</a>
@@ -38,11 +51,11 @@
                 <button class="btn btn-secondary dropdown-toggle nav-btn" type="button" data-toggle="dropdown">
                 <span class="caret"></span>MENU FOR THE WEEK</button>
                 <ul class="dropdown-menu">
-                  <li><a href="#">ACHU</a></li>
-                  <li><a href="#">KHATI KHATI</a></li>
-                  <li><a href="#">EKWANG</a></li>
-                  <li><a href="#">MBOGO CHOBI</a></li>
-                  <li><a href="#">ERRU</a></li>
+                  <li><a href="assets/images/achu.jpg">ACHU</a></li>
+                  <li><a href="assets/images/khati5.jpg">KHATI KHATI</a></li>
+                  <li><a href="assets/images/ekwang2.jpg">EKWANG</a></li>
+                  <li><a href="assets/images/mbongo1.jpg">MBOGO CHOBI</a></li>
+                  <li><a href="assets/images/kwakoko4.jpg">KWAKOKO</a></li>
                   <li><a href="#">ROATED MEAT</a></li>
                   <li><a href="#">NDOLE</a></li>
                 </ul>
@@ -57,6 +70,9 @@
                 <a class="nav-link" href="#contact">Contact Us</a>
             </li>
              <li class="navbar-btn">
+                 <a href="#contact"><button type="button" class="btn btn-secondary nav-btn">Signin | Signup</button></a>
+            </li>
+            <li class="navbar-btn">
                  <button type="button" class="btn btn-secondary nav-btn" data-toggle="modal" data-target="#myModal">Your Feedback</button>
             </li>
         </ul>
@@ -217,11 +233,11 @@
     <div id="about" class="bg-success">
        <div class="container" style="color: #fff; padding: 20px; text-align: center; font-size: 20px;">
             <h1 style="font-size: 40px;text-transform: capitalize;">African restaurant in Bochum.</h1><br><br>
-            <p>We have been in Bochum for more than 4 years, your specialty restaurant for African dishes (see menu). <br>All dishes can be ordered for self-collectors and even home delivery. We have a wide range of drinks (see drinks menu), e.g.<br> we also have African beer. As part of our sports bar offer, you can watch football matches live in English with Sky-Sport.<br> Musically, we offer African and western music. We are happy by command to make sure that your occasions, from birthday, wedding parties etc is success.<br><br><br> <a href="#"><button type="button" class="style_btn btn-secondary">LEARN MORE ABOUT US</button></a>
+            <p>We have been in Bochum for more than 4 years, your specialty restaurant for African dishes (see menu). <br>All dishes can be ordered for self-collectors and even home delivery. We have a wide range of drinks (see drinks menu), e.g.<br> we also have African beer. As part of our sports bar offer, you can watch football matches live in English with Sky-Sport.<br> Musically, we offer African and western music. We are happy by command to make sure that your occasions, from birthday, wedding parties etc is success.<br><br><br> <a href="about.php"><button type="button" class="style_btn btn-secondary">LEARN MORE ABOUT US</button></a>
        </div>
     </div>
     <div id="services" style="background-color: #f1e5f9;">
-       <div class="container" style="padding: 20px; text-align: center; font-size: 20px;">
+        <div class="container" style="padding: 20px; text-align: center; font-size: 20px;">
             <h1 style="font-size: 40px;margin-top: 15px;">We provide oustanding Services and Benefits.</h1><br><br>
             <p>Always placing our guest and customers first, our team has as it's utmost priority to make sure that all customers are well satisfied and happy.<br> We provide a wide range of customer services. Just to mention a few.</p>
             <u>
@@ -231,8 +247,8 @@
                 <li>Children play corner with nanny to look after them.</li>
                 <li>Free Wifi.</li>
                 <li>Flat rate on all soft drinks.</li>
-            </u>
-       </div>
+            </u><br><br>
+        </div>
     </div>
     <div id="contact"><br><br><br>
         <div class=" container">
@@ -244,9 +260,12 @@
                    <h2 style="font-size: 35px;margin-top: 15px;">Our Opening hours:</h2>
                       <p>We are open:<br> Monday to Sunday from 18:00 to 05:00.<br> Friday and Saturday from 22:00 clock we have our DJ.<br> You can reach us by phone: +49 (0) 2345867327 or mobile: 0172/62 56 827.</p>
 
-                     <p>NOTICE: Smoking is not allowed inside the restaurant, but of course a corner has been arranged ouside to smoking.</p> 
+                     <p>NOTICE: Smoking is not allowed inside the restaurant, but of course a corner has been arranged ouside to smoking.</p>
+                     <div>
+                         <p class="font-weight-bold">Visit Our Restaurant and enjoy the taste of our food.<br>For more contact details and direction <a  href="contact.php"><button type="button" class="btn btn-success btn_contact">CLICK HERE</button></a></p>
+                     </div> 
                      <div class="social-media">
-                         <a href="#" class="fa fa-facebook"></a>
+                         <a href="https://www.facebook.com/ken_fombang@yahoo.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                          <a href="#" class="fa fa-twitter"></a>
                          <a href="#" class="fa fa-youtube"></a>
                          <a href="#" class="fa fa-instagram"></a>
@@ -258,30 +277,30 @@
      
                      <!--SIGNUP-->
                      <div id="signup" style="display: none;">
-                          <p style="background-color:red;color: #fff;padding:5px;margin-top:30px;border-radius:3px;display:none;" id="suc_signup">error</p>
+                          <h6 style="background-color:red; height: 35px;color: #fff; font-size: 20px; text-align: center; opacity: 0.6; padding:5px;margin-top:30px;margin-left:15px;margin-right: 15px; border-radius:4px;display:none;" id="suc_signup">error</h6>
                           <div class="col-md-12 form-group">
-                               <input type="text" name="fname" class="form-control" id="fname" placeholder="Enter fname">
+                               <input type="text" name="fname" class="form-control" id="fname" placeholder="Enter First Name" onkeyup="fadeoutfname()">
                           </div>
                           <div class="col-md-12 form-group">
-                               <input type="text" name="lname" class="form-control" id="lname" placeholder="Enter Last Name">
+                               <input type="text" name="lname" class="form-control" id="lname" placeholder="Enter Last Name" onkeyup="fadeoutlname()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <input type="date" name="birthdate" class="form-control" id="birthdate" placeholder="Birthdate">
+                              <input type="date" name="birthdate" class="form-control" id="birthdate" placeholder="Birthdate" onkeyup="fadeoutbirthday()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <input type="number" name="id_number" class="form-control" id="id_number" placeholder="Identity Card Number">
+                              <input type="number" name="id_number" class="form-control" id="id_number" placeholder="Identity Card Number" onkeyup="fadeoutidnumber()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email">
+                              <input type="email" name="email" class="form-control" id="email" placeholder="Enter Email" onkeyup="fadeoutemail()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <input type="password" name="pword" class="form-control" id="pword" placeholder="Enter Password">
+                              <input type="password" name="pword" class="form-control" id="pword" placeholder="Enter Password" onkeyup="fadeoutpword()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <input type="password" name="cpword" class="form-control" id="cpword" placeholder="Confirm Password">
+                              <input type="password" name="cpword" class="form-control" id="cpword" placeholder="Confirm Password" onkeyup="fadeoutcpword()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <button type="button" id="btn_val" name="btn_val" class="form-control btn btn-success" onclick="signup_validate()">SIGNUP</button>
+                              <button type="button" id="signup_btn_val" name="signup_btn_val" class="form-control btn btn-success" onclick="customer_signup()">SIGNUP</button>
                           </div>
                           <a style="padding: 15px; color:green; cursor: pointer;" onclick="display_signin()">Aready have an Account!. Login.</a>
                       </div>
@@ -289,15 +308,15 @@
 
                       <!--SIGNIN-->
                       <div id="signin" style="display: block;">
-                          <p style="background-color:red;color: #fff;padding:5px;margin-top:30px;border-radius:3px;display:none;" id="suc_signin">error</p>
+                          <p style="background-color:red; height: 35px;color: #fff; font-size: 20px; text-align: center; opacity: 0.6; padding:3px;margin-top:30px;margin-left:15px;margin-right: 15px; border-radius:4px;display:none;" id="suc_signin">error</p>
                            <div class="col-md-12 form-group">
-                              <input type="email" name="email_signin" id="email_signin" class="form-control" placeholder="Your Email*">
+                              <input type="email" name="email_signin" id="email_signin" class="form-control" placeholder="Your Email" onkeyup="fadeoutemail()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <input type="password" name="pword_signin" id="pword_signin" class="form-control" placeholder="Your Password*">
+                              <input type="password" name="pword_signin" id="pword_signin" class="form-control" placeholder="Your Password" onkeyup="fadeoutpword()">
                           </div>
                           <div class="col-md-12 form-group">
-                              <button type="button" name="signin_val" id="signin_val" class="btn btn-success form-control" onclick="signin_validate()">SIGNIN</button>
+                              <button type="button" name="signin_btn_val" id="signin_btn_val" class="btn btn-success form-control" onclick="customer_signin()">SIGNIN</button>
                           </div>
                           <a style="padding: 15px; color:green; cursor: pointer;" onclick="display_signup()">Don't have an Account!. Signup.</a>
                      </div><br><br>
@@ -305,7 +324,7 @@
 
                     <div>
                         <div>
-                            <h3 style="text-align: center; text-transform: uppercase; color:green; font-size: 20px; font-family: sans-serif;font-weight: bold;">Your feedback will help us improve on our services.</h3>
+                            <h3 style="text-align: center; text-transform: uppercase; color:green; font-size: 20px; font-family: sans-serif;font-weight: bold;">Your feedback will help us improve our services.</h3>
                         </div><br>
                         <div class="text-center">
                            <!-- Button to Open the Modal -->
@@ -316,58 +335,50 @@
 
                         <!-- The Modal -->
                         <div class="modal fade" id="myModal">
-                          <div class="modal-dialog">
-                            <div class="modal-content animated flipInY">
+                           <div class="modal-dialog">
+                                <div class="modal-content animated flipInY">
 
-                              <!-- Modal Header -->
-                              <div class="modal-header">
-                                <h4 class="modal-title text-success">GIVE US YOUR FEEDBACK</h4>
-                                <button type="button" class="close text-success" data-dismiss="modal">&times;</button>
-                              </div>
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-success">GIVE US YOUR FEEDBACK PLEASE!</h4>
+                                    <button type="button" class="close text-success" data-dismiss="modal">&times;</button>
+                                </div>
 
-                              <!-- Modal body -->
-                              <div class="modal-body">
-                                  
-                                    <div class="modal-body modal_form">
-                                           <form action="index.php" method="POST" onsubmit="return checkformsignup()" id="modal_form">
-                                            <h6 style="background: red; color: #fff; display: none;" id="error">error</h6>
-                                                <div class="row">
-                                                    <div class="col-md-6 form-group">
-                                                           <input type="text" name="ffname" id="ffname" class="form-control" placeholder="First Name" onkeyup="fadeoutfname()">
-                                                      
-                                                    </div>
-                                                    <div class="col-md-6 form-group">
-                                                           <input type="text"  name="flname" id="flname" class="form-control" placeholder="Last Name" onkeyup="fadeoutlname()">
-                                                        
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                           <input type="email" name="femail" id="femail" class="form-control" placeholder="Your Email" onkeyup="fadeoutemail()">
-                                                        
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                           <input type="password" name="fpword" id="fpword" class="form-control" placeholder="Your Password" onkeyup="fadeoutpword()">
-                                               
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                           <textarea class="col-md-12 form-control" name="fmessage" rows="5" id="fmessage" placeholder="Your Message here (Enter between 100 to 300 characters)" onkeyup="fadeoutmessage()"></textarea>
-                                                        
-                                                    </div>
-                                                    <div class="col-md-12 form-group">
-                                                          <button type="button" class="btn btn-success form-control" onclick="contactValidation()"><i class="fa fa-paper-plane" aria-hidden="true"></i> Send</button>
-                                                    </div>
-                                               </div>    
-                                          </form>     
-                                    </div>
-                              </div>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <div class="style_feedback">
+                                            <h6 style="background: red; border-radius: 4px; height: 30px; text-align: center; color: #fff; padding:5px; opacity: 0.6; display: none;" id="ferror">feedback error</h6>
+                                            <div class="row">
+                                                <div class="col-md-6 form-group">
+                                                    <input type="text" name="ffname" id="ffname" class="form-control" placeholder="Your First Name Please.." onkeyup="fadeoutffname()">
+                                                </div>
+                                                <div class="col-md-6 form-group">
+                                                    <input type="text" name="flname" id="flname" class="form-control" placeholder="Your Last Name Please.."  onkeyup="fadeoutflname()">
+                                                </div>
+                                                <div class="col-md-12 form-group">
+                                                    <input type="email" name="femail" id="femail" class="form-control" placeholder="Your Email Please.." onkeyup="fadeoutfemail()">
+                                                </div> 
+                                                <div class="col-md-12 form-group">
+                                                   <input type="text" name="fsubject" id="fsubject" class="form-control" placeholder="Your Subject Please.." onkeyup="fadeoutfsubject()">
+                                                </div>
+                                                <div class="col-md-12 form-group">
+                                                    <textarea class="col-md-12 form-control" name="fmessage" rows="5" id="fmessage" placeholder="Your Message here Please.. (Enter between 100 to 300 characters)" onkeyup="fadeoutfmessage()"></textarea>
+                                                    
+                                                </div>
+                                                <div class="col-md-12 form-group">
+                                                    <button type="button" onclick="checkformfeedback()" name="feedback_btn_val" id="feedback_btn_val" class="form-control btn btn-success">Send</button>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                    </div> 
 
                               <!-- Modal footer -->
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                               </div>
-
                             </div>
-                          </div>
                         </div>
+                    </div>
                         <!--End Modal-->
 
                     </div>
@@ -382,49 +393,248 @@
  
     <br><br><br>
 </body>
- <script> 
+ <script>
 
-        function fadeoutfname(){
-          jQuery("#error").fadeOut();
+ //BEGINING VALIDATION SIGNUP
+ function customer_signin(){
+
+     //check if user has entered email
+        var email_signin = document.getElementById("email_signin").value;
+        if (email_signin =="") { 
+
+                jQuery("#suc_signin").fadeIn();
+                jQuery("#suc_signin").html("Please Enter Your Email.");
+                jQuery("#suc_signin").css("background-color","red");
+
+                setTimeout( () => {
+                        jQuery("#suc_signin").fadeOut();
+                }, 2000);
+
+                 jQuery("#email_signin").focus();
+ 
+                return false;
+
+
         }
 
-        function fadeoutlname(){
-          jQuery("#error").fadeOut();
+        //check if user has entered password
+        var pword_signin = document.getElementById("pword_signin").value;
+        if (pword_signin =="") { 
+
+                jQuery("#suc_signin").fadeIn();
+                jQuery("#suc_signin").html("Please Enter Your Password.");
+                jQuery("#suc_signin").css("background-color","red");
+
+
+                setTimeout( () => {
+                        jQuery("#suc_signin").fadeOut();
+                }, 2000);
+
+                jQuery("#pword_signin").focus();
+                
+                return false;
+
+
         }
 
-        function fadeoutemail(){
-          jQuery("#error").fadeOut();
-        }
 
-        function fadeoutpword(){
-          jQuery("#error").fadeOut();
-        }
+        var email_signin = document.getElementById('email_signin').value;
+        var pword_signin = document.getElementById('pword_signin').value;
+        var signin_btn_val = document.getElementById('signin_btn_val').value;
 
-        function fadeoutmessage(){
-          jQuery("#error")
-        }
+        var data2 = "email_signin="+email_signin+"&pword_signin="+pword_signin+"&signin_btn_val="+signin_btn_val;
 
-        function fadeoutcpword(){
-          jQuery("#error").fadeOut();
-        }
+        
+        jQuery.ajax({
 
-          //SIGNUP VALIDATION  
-          function caretaker_validate(){
-               var fname = document.getElementById('fname').value;
-               var lname = document.getElementById('lname').value;
-               var email = document.getElementById('email').value;
-               var pword = document.getElementById('pword').value;
-               var cpword = document.getElementById('cpword').value;
-               var birthdate = document.getElementById('birthdate').value;
-               var btn_val = document.getElementById('btn_val').value;
+            url:"controllers/formhandlers/signin.php",
+            method:"POST",
+            data:data2,
+            cache:false,
+
+            success:function(data2){
+
+                if(data2=="success"){
+                   jQuery("#suc_signin").fadeIn();
+                   jQuery("#suc_signin").html("Signin was successful");
+                   jQuery("#suc_signin").css("background-color","green");   
 
 
-               var data1 = "fname="+fname+"&lname="+lname+"&email="+email+"&pword="+pword+"&cpword="+cpword+"&birthdate="+birthdate+"&btn_val="+btn_val;
+                   jQuery("#email_signin").val('');
+                   jQuery("#pword_signin").val('');
 
+
+                  //remove message after 2sec   
+                setTimeout(function(){
+                     jQuery("#suc_signin").fadeOut();
+                }, 2000);
+                // //end setTimeout
+
+                 window.location.replace('home.php'); //Direct you to another page after signingup, in this case (home.php).
+
+                }
+                if(data1=="error"){
+                   jQuery("#suc_signin").fadeIn();
+                   jQuery("#suc_signin").html("Signin was not successful");
+                   jQuery("#suc_signin").css("background-color","red");
+
+                    
+                   jQuery("#email_signin").val('');
+                   jQuery("#pword_signin").val('');
+                        
+                //remove message after 2sec 
+                setTimeout(function(){
+                     jQuery("#suc_signin").fadeOut();
+                }, 2000);
+                // //end setTimeout
+                }
+             
+           },
+            error:function(){
+                alert("error");
+            }
+
+        
+        });
+     } 
+
+                  //BEGINING VALIDATION SIGNUP
+                    function fadeoutfname(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+                    function fadeoutlname(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+                     function fadeoutbirthday(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+                     function fadeoutidnumber(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+                    function fadeoutemail(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+                    function fadeoutpword(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+                    function fadeoutcpword(){
+                      jQuery("#suc_signup").fadeOut();
+                    }
+
+          
+          function customer_signup(){
+
+                    if(jQuery("#fname").val()==""){
+                    jQuery("#suc_signup").fadeIn();
+                    jQuery("#suc_signup").html("Please enter your first name");
+                    jQuery("#suc_signup").css("background-color","red");
+                    
+
+                    jQuery("#fname").focus();
+
+                    return false;
+                }
+
+                if(jQuery("#lname").val()==""){
+                    jQuery("#suc_signup").fadeIn();
+                    jQuery("#suc_signup").html("Please enter your last name");
+                    jQuery("#suc_signup").css("background-color","red");
+                    
+                    jQuery("#lname").focus();
+
+                    return false;
+                }
+
+                if(jQuery("#birthdate").val()==""){
+                    jQuery("#suc_signup").fadeIn();
+                    jQuery("#suc_signup").html("Please enter your birthdate");
+                    jQuery("#suc_signup").css("background-color","red");
+                    
+                    jQuery("#birthdate").focus();
+
+                    return false;
+                }
+
+                 if(jQuery("#id_number").val()==""){
+                    jQuery("#suc_signup").fadeIn();
+                    jQuery("#suc_signup").html("Please enter your id_number");
+                     jQuery("#suc_signup").css("background-color","red");
+                    
+                    jQuery("#id_number").focus();
+
+                    return false;
+                }
+
+                var email= document.getElementById("email").value;
+                if(email==""){
+                   jQuery("#suc_signup").fadeIn();
+                   jQuery("#suc_signup").html("Please enter your email");
+                   jQuery("#suc_signup").css("background-color","red");
+                   
+                   jQuery("#email").focus();
+
+                   return false;
+                }
+
+                var pword = document.getElementById("pword").value;
+                if(pword==""){
+                    jQuery("#suc_signup").fadeIn();
+                    jQuery("#suc_signup").html("Please enter your pass word");
+                    jQuery("#suc_signup").css("background-color","red");
+                    jQuery("#pword").focus();
+
+                    return false;
+                }
+
+                var cpword = document.getElementById("cpword").value;
+                if(cpword==""){
+                    jQuery("#suc_signup").fadeIn();
+                    jQuery("#suc_signup").html("Please confirm your pass word");
+                    jQuery("#suc_signup").css("background-color","red");
+                    jQuery("#cpword").focus();
+
+                    return false;
+                }
+
+
+                if (jQuery("#pword").val()!="" && jQuery("#cpword").val()!=""){
+                  
+                  if(jQuery("#pword").val()!=jQuery("#cpword").val()){
+                    jQuery("#suc_signup").fadeIn()
+                    jQuery("#suc_signup").html("Your confirm password does not match password")
+
+                    jQuery("#cpword").focus();
+
+                    return false;
+                  }
+               }
+
+
+
+
+
+               var fname=document.getElementById('fname').value;
+               var lname=document.getElementById('lname').value;
+               var birthdate=document.getElementById('birthdate').value;
+               var id_number=document.getElementById('id_number').value;
+               var email=document.getElementById('email').value;
+               var pword=document.getElementById('pword').value;
+               var cpword=document.getElementById('cpword').value;
+               var signup_btn_val = document.getElementById('signup_btn_val').value;
+
+
+               var data1="fname="+fname+"&lname="+lname+"&birthdate="+birthdate+"&id_number="+id_number+"&email="+email+"&pword="+pword+"&cpword="+cpword+"&signup_btn_val="+signup_btn_val;
+              
 
               jQuery.ajax({
                     
-                    url:"controllers/formhandlers/validate.php",
+                    url:"controllers/formhandlers/signup.php",
                     method:"POST",
                     data:data1,
                     cache:false,
@@ -433,45 +643,48 @@
                     success:function(data1){
                         
                          if(data1=="success"){
-                             jQuery("#suc").fadeIn();
-                             jQuery("#suc").html("Email validation successful");
-                             jQuery("#suc").css("background-color","green");
+
+                             jQuery("#suc_signup").fadeIn();
+                             jQuery("#suc_signup").html("Email validation successful");
+                             jQuery("#suc_signup").css("background-color","green");
 
                             //EMPTY the empty the inputfields after clicking the validate button
                              jQuery("#fname").val('');
                              jQuery("#lname").val('');
+                             jQuery("#birthdate").val('');
+                             jQuery("#id_number").val('');
                              jQuery("#email").val('');
                              jQuery("#pword").val('');
                              jQuery("#cpword").val('');
-                             jQuery("#birthdate").val('');
                              //END OF EMPTY the inputfields after clicking the validate button     
 
                              //setTimeout to erase(fadeOut) the success text after display 
                              setTimeout(function(){
-                                  jQuery("#suc").fadeOut();
+                                  jQuery("#suc_signup").fadeOut();
                              }, 2000);
                               //End of setTimeout text   
+                            
 
                              window.location.replace('home.php'); //Direct you to another page after signingup, in this case (home.php).
                          
+                           
                          }
 
                           if(data1=="error"){
-                             jQuery("#suc").fadeIn();
-                             jQuery("#suc").html("Email did not validate");
-                             jQuery("#suc").css("background-color","red");
+                             jQuery("#suc_signup").fadeIn();
+                             jQuery("#suc_signup").html("Email did not validate");
+                             jQuery("#suc_signup").css("background-color","red");
 
                              //EMPTY the inputfields after clicking the validate button
                            
                              jQuery("#email").val('');
                              jQuery("#pword").val('');
                              jQuery("#cpword").val('');
-                             jQuery("#birthdate").val('');
                             //END OF EMPTY the inputfields after clicking the validate button  
 
                             //setTimeout to erase(fadeOut) the error text after display 
                             setTimeout(function(){
-                                  jQuery("#suc").fadeOut();
+                                  jQuery("#suc_signup").fadeOut();
                              }, 2000);
                             //End of setTimeout text 
 
@@ -489,7 +702,149 @@
               })
 
           }
-       //END OF SIGNIN VALIDATION
+
+       //END OF VALIDATION SIGNUP
+
+
+    //Feedback Validation
+    function fadeoutffname(){
+          jQuery("#ferror").fadeOut();
+     }
+
+     function fadeoutflname(){
+          jQuery("#ferror").fadeOut();
+     }
+
+     function fadeoutfemail(){
+          jQuery("#ferror").fadeOut();
+     }
+
+     function fadeoutfsubject(){
+          jQuery("#ferror").fadeOut();
+     }
+
+     function fadeoutfmessage(){
+          jQuery("#ferror").fadeOut();
+     }
+
+
+     function checkformfeedback(){
+        
+          if(jQuery("#ffname").val()==""){
+               jQuery("#ferror").fadeIn();
+               jQuery("#ferror").html("Please Enter Your First Name.");
+               
+
+               jQuery("#ffname").focus();
+
+               return false;
+          }
+
+
+         if(jQuery("#flname").val()==""){
+               jQuery("#ferror").fadeIn();
+               jQuery("#ferror").html("Please Enter Your Last Lame.");
+               
+               jQuery("#flname").focus();
+
+               return false;
+          }
+
+           if(jQuery("#femail").val()==""){
+               jQuery("#ferror").fadeIn();
+               jQuery("#ferror").html("Please Enter Your Email.");
+
+               jQuery("#femail").focus();
+
+               //  setTimeout( () => {
+               //          jQuery("#ferror").fadeOut();
+               //  }, 2000);
+
+               return false;
+           }
+
+
+       var fsubject = document.getElementById("fsubject").value;
+         if(fsubject==""){
+          jQuery("#ferror").fadeIn();
+          jQuery("#ferror").html("Please Enter The Subject Of Your Message.");
+          jQuery("#fsubject").focus();
+
+          return false;
+     }
+
+       var fmessage = document.getElementById("fmessage").value;
+         if(fmessage==""){
+          jQuery("#ferror").fadeIn();
+          jQuery("#ferror").html("Please Enter a Message.");
+          jQuery("#fmessage").focus();
+
+          return false;
+
+     }else if(fmessage.length < 100 || fmessage.length > 300){
+          jQuery("#ferror").fadeIn();
+          jQuery("#ferror").html("Please Enter message of more than 100 and less than 300 characters.");
+          jQuery("#fmessage").focus();
+
+          return false;
+          
+     }
+     
+
+
+        var ffname=document.getElementById('ffname').value;
+        var flname=document.getElementById('flname').value;
+        var femail=document.getElementById('femail').value;
+        var fsubject=document.getElementById('fsubject').value;
+        var fmessage=document.getElementById('fmessage').value;
+        var feedback_btn_val=document.getElementById('feedback_btn_val').value;
+     
+        var data4="ffname="+ffname+"&flname="+flname+"&femail="+femail+"&fsubject="+fsubject+"&fmessage="+fmessage+"&feedback_btn_val="+feedback_btn_val;
+
+        
+        jQuery.ajax({
+
+          url:"controllers/formhandlers/feedback.php",
+          method:"POST",
+          data:data4,
+          cache:false,
+
+          success:function(data4){
+              
+            if(data4=="success"){
+              jQuery("#ferror").fadeIn();
+              jQuery("#ferror").html("Feedback Succesfully Validated");
+              jQuery("#ferror").css("background-color","green");
+
+                setTimeout( () => {
+                        jQuery("#ferror").fadeOut();
+                }, 2000);
+
+            jQuery("#ffname").val('');
+            jQuery("#flname").val('');
+            jQuery("#femail").val('');
+            jQuery("#fsubject").val('');
+            jQuery("#fmessage").val('');
+            
+            
+            }
+
+            if(data4=="error"){
+              jQuery("#ferror").fadeIn();
+              jQuery("#ferror").html("Feedback Did Not Validate");
+              jQuery("#ferror").css("background-color","red");
+            }
+          },
+
+          error:function(){
+            alert("error");
+          }
+
+        });
+    
+}
+    //End Feedback Validation
+
 
       //Signup / Signin Toggle
       function display_signup(){
@@ -503,7 +858,7 @@
                  jQuery("#signup").css("display","none");
                  jQuery("#text_id").html("SIGNIN");
               } 
-      // //End of Signup / Signin Toggle             
+       //End of Signup / Signin Toggle  
 
      </script>
 </html>

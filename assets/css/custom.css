@@ -9,9 +9,12 @@
     border-radius: 10px;
     background-color: #fff;
     border: 3px solid green;
-
-  
 }
+
+.btn_contact{
+  border-radius:5px;
+}
+
 .nav-btn{
     background-color: #F0910C !important;
 }
@@ -29,7 +32,7 @@
  
 }
 .fa:hover {
-    opacity: 0.7;
+    opacity: 0.9;
 }
 .fa-facebook {
   background: #3B5998;
@@ -60,11 +63,17 @@
     bottom: 0;
     position: fixed;
 }
-.modal_form{
-    width: 100%;
-    margin: auto;
-    background-color: #d0d6e2;
-    color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+
+.style_feedback{
+     background-color: #d0d6e2;
+     padding: 20px;
+     width: 100%;
+     margin: auto;
+     border-radius: 5px;
 }
+
+ .service-btn{
+  background-color: #fff;
+  color: green;
+  border: 1px solid green;
+ }
