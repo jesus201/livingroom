@@ -63,7 +63,7 @@
     	<h1>CONTACT</h1>
     </div>
    <div class="footer bg-success">
-        <p>FombangKenn &copy; 2017. Designed by KennedyFombang. All Rights Reserved.</p>
+        <p>FombangKenn &copy; 2022. Designed by KennedyFombang. All Rights Reserved.</p>
    </div>>
  
     <br><br><br>
