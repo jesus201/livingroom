@@ -1,5 +1,5 @@
 <?php
 
-define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/myfirstwebsite/');
+define('BASEURL', $_SERVER['DOCUMENT_ROOT'].'/emilia_kitchen/');
 
 ?>

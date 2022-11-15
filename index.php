@@ -1,7 +1,7 @@
 
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/myfirstwebsite/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/emilia_kitchen/core/init.php';
 
   if(isset($_SESSION['loggedin'])){
     header("location:home.php");

@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/myfirstwebsite/core/init.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/emilia_kitchen/core/init.php';
 
 if(isset($_POST['signup_btn_val'])){
 	$fname=strip_tags($_POST['fname']);

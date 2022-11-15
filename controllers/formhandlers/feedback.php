@@ -1,5 +1,5 @@
 <?php
- require_once $_SERVER['DOCUMENT_ROOT'].'/myfirstwebsite/core/init.php';
+ require_once $_SERVER['DOCUMENT_ROOT'].'/emilia_kitchen/core/init.php';
 
 
 if(isset($_POST["feedback_btn_val"])){

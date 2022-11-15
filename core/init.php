@@ -1,12 +1,12 @@
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'].'/myfirstwebsite/config.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/emilia_kitchen/config.php';
 
 ob_start();
 
 session_start();
 
- $con=mysqli_connect("localhost","root","","emilia_restaurant");
+ $con=mysqli_connect("localhost","root","","emilia_kitchen");
 
  if(mysqli_connect_errno()){
  	echo "error connecting ". mysqli_connect_errno();
